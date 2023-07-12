@@ -1,0 +1,17 @@
+{
+  "name": "req101449",
+  "workspaces": [
+    "packages/*"
+  ],
+  "private": true,
+  "scripts": {
+    "setup:db": "cd packages/server-app/ && npm run db:setup",
+    "start:server": "cd packages/server-app/ && npm run start",
+    "run:web": "cd packages/web && npm run start"
+  },
+  "author": {
+    "name": "Jaimin Pandya",
+    "email": "jaiminmoslake7020@gmail.com"
+  },
+  "version": "0.0.0"
+}

@@ -1,0 +1,5 @@
+FROM mariadb:latest
+ENV MARIADB_ROOT_PASSWORD=jaiminPandya!!!
+# Set the database name
+ENV MYSQL_DATABASE=req101449
+EXPOSE 3306

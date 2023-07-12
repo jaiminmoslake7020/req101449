@@ -1,0 +1,22 @@
+{
+  "type": "mariadb",
+  "host": "db",
+  "port": 3306,
+  "database": "req101449",
+  "username": "root",
+  "password": "jaiminPandya!!!",
+  "synchronize": true,
+  "logging": true,
+  "entities": [
+    "src/models/*.ts"
+  ],
+  "seeds": [
+    "src/database/seeds/**/*{.ts,.js}"
+  ],
+  "factories": [
+    "src/database/factories/**/*{.ts,.js}"
+  ],
+  "cli": {
+    "migrationsDir": "src/migrations"
+  }
+}

@@ -1,0 +1,36 @@
+version: '3'
+services:
+  db:
+    image: testopsprocess/req-101449:final
+    ports:
+      - "3306:3306"
+    expose:
+      - 3306
+    networks:
+      - internalnet
+
+  backend:
+    image: testopsprocess/req-101449-server:final.1
+    links:
+      - db
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    restart: always
+    expose:
+      - 3000
+    networks:
+      - internalnet
+
+  web:
+    image: testopsprocess/req-101449-web:final
+    ports:
+      - "3001:3001"
+    expose:
+      - 3001
+
+networks:
+  internalnet:
+    driver: bridge
