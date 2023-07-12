@@ -20,8 +20,11 @@ export default function validateForm(body:Product | undefined): FailedResponseTy
     const errorList = [] as ErrorType[];
     console.log(body);
     const {
-      productName, productDescription, productSize, productColour
+      productName, productDescription, productSize, productColour, webProductId
     } = body || {};
+    if (!webProductId || Number.isNaN(webProductId)) {
+      errorList.push(addNewErrorMsgWithTitle('Form Validation', 'Product Id must not be empty.'));
+    }
     if (!productName) {
       errorList.push(addNewErrorMsgWithTitle('Form Validation', 'Product Name must not be empty.'));
     }

@@ -1,4 +1,4 @@
-import { object, string, TypeOf } from "zod";
+import {number, object, string, TypeOf} from "zod";
 
 /**
  * @openapi
@@ -7,6 +7,7 @@ import { object, string, TypeOf } from "zod";
  *     Product:
  *       type: object
  *       required:
+ *        - webProductId
  *        - productName
  *        - productDescription
  *        - productColour
@@ -14,6 +15,8 @@ import { object, string, TypeOf } from "zod";
  *       properties:
  *         productId:
  *           type: string
+ *         webProductId:
+ *           type: number
  *         productDescription:
  *           type: string
  *         productColour:
@@ -28,6 +31,9 @@ const payload = {
   body: object({
     productName: string({
       required_error: "Product Name is required",
+    }),
+    webProductId: number({
+      required_error: "Product Id is required",
     }),
     productDescription: string({
       required_error: "Product Description is required",

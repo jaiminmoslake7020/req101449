@@ -40,9 +40,11 @@ export const saveProduct = async (productInput:CreateProductInput):Promise<Produ
         productColour,
         productSize,
         productDescription,
+        webProductId
     } = productInput.body;
 
     const product = Object.assign(new Product(), {
+        webProductId,
         productName,
         productColour,
         productSize,
@@ -70,10 +72,12 @@ export const updateProduct = async (productInput:UpdateProductInput):Promise<Pro
         productName,
         productColour,
         productSize,
-        productDescription
+        productDescription,
+        webProductId
     } = productInput.body;
 
     const product = Object.assign(oldProduct, {
+        webProductId,
         productName,
         productColour,
         productSize,

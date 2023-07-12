@@ -15,6 +15,10 @@ export class Product {
 
     @IsNotEmpty()
     @Column()
+    public webProductId: number;
+
+    @IsNotEmpty()
+    @Column()
     public productName: string;
 
     @IsNotEmpty()

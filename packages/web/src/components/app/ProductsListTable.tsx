@@ -47,7 +47,7 @@ export default function ProductsListTable() {
         <Table sx={{minWidth: 650}} aria-label="product list table">
           <TableHead>
             <TableRow>
-              <TableCell>{ProductLabel.productId}</TableCell>
+              <TableCell>{ProductLabel.webProductId}</TableCell>
               <TableCell>{ProductLabel.productName}</TableCell>
               <TableCell align="center">{ProductLabel.productColour}</TableCell>
               <TableCell align="center">{ProductLabel.productSize}</TableCell>
@@ -62,7 +62,7 @@ export default function ProductsListTable() {
               >
                 <TableCell component="th" scope="row">
                   <Link className="btn btn-link" to={`/view/${product.productId}`}>
-                    {product.productId}
+                    {product.webProductId}
                   </Link>
                 </TableCell>
                 <TableCell component="th" scope="row">

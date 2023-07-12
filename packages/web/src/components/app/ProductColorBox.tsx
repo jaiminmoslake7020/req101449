@@ -10,7 +10,7 @@ function ProductColorBox(props: ProductColorBoxPropTypes) {
     color
   } = props;
   return (
-    <div className="px-2 py-2 border-b-4 text-center max-w-[5rem]"
+    <div className="px-2 py-2 border-b-4 text-center max-w-[10rem]"
       style={{
         borderColor: color,
       }}

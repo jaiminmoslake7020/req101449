@@ -10,6 +10,7 @@ define(Product, (faker: typeof Faker, settings: { role: string }) => {
     const productName = faker.commerce.productName();
     const product = new Product();
     product.productName = productName;
+    product.webProductId = faker.random.number(10000);
     product.productDescription = faker.lorem.paragraph(3);
     product.productColour = faker.commerce.color();
     product.productSize = productSizeList[faker.random.number(2)];

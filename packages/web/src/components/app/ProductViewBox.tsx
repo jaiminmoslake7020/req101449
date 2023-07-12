@@ -9,6 +9,7 @@ import {Link} from 'react-router-dom';
 import {Alert} from '@mui/material';
 import {Product, ProductLabel} from '../../types/app';
 import ProductColorBox from './ProductColorBox';
+import ProductLabelBox from './ProductLabelBox';
 
 export type ProductViewBoxProps = {
   product:Product
@@ -21,7 +22,7 @@ export default function ProductViewBox(props:ProductViewBoxProps) {
 
   const {
     productId, productName,
-    productDescription, productSize, productColour,
+    productDescription, productSize, productColour, webProductId
   } = product;
 
   // @ts-ignore
@@ -34,10 +35,10 @@ export default function ProductViewBox(props:ProductViewBoxProps) {
               <TableRow
 
               >
-                <TableCell component="th">{ProductLabel.productId}</TableCell>
+                <TableCell component="th">{ProductLabel.webProductId}</TableCell>
                 <TableCell scope="row">
                   <Link className="btn btn-link" to={`/view/${productId}`} >
-                    {productId}
+                    {webProductId}
                   </Link>
                 </TableCell>
               </TableRow>
@@ -66,7 +67,7 @@ export default function ProductViewBox(props:ProductViewBoxProps) {
               >
                 <TableCell component="th">{ProductLabel.productSize}</TableCell>
                 <TableCell scope="row">
-                  {productSize}
+                  <ProductLabelBox size={productSize} />
                 </TableCell>
               </TableRow>
               <TableRow

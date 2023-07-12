@@ -2,6 +2,7 @@ export type ProductSizeType = 'small' | 'medium' | 'large';
 
 export type Product = {
   productId?: string,
+  webProductId: number,
   productName: string,
   productDescription: string,
   productColour: string,
@@ -12,6 +13,7 @@ export type ProductKey = keyof Product;
 
 export const ProductLabel = {
   productId: 'Product Id',
+  webProductId: 'Product Id',
   productName: 'Name',
   productDescription: 'Description',
   productColour: 'Colour',

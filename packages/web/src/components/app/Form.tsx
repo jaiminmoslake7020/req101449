@@ -37,10 +37,11 @@ export default function Form(props:FormProps) {
 
   const navigate = useNavigate();
   const {
-    productId, productName,
+    productId, productName, webProductId,
     productSize, productColour, productDescription
   } = product || {};
 
+  const [inputProductWedId, setInputProductWebId] = useState<number>(webProductId || 1);
   const [inputProductName, setInputProductName] = useState<string>(productName || '');
   const [inputProductColor, setInputProductColor] = useState<string>(productColour || '');
   const [inputProductDescription, setInputProductDescription] = useState<string>(productDescription || '');
@@ -76,6 +77,7 @@ export default function Form(props:FormProps) {
       productSize: inputProductSize,
       productDescription: inputProductDescription,
       productColour: inputProductColor,
+      webProductId: inputProductWedId,
     };
     const validation = validateForm(body);
     const {
@@ -97,7 +99,8 @@ export default function Form(props:FormProps) {
     inputProductSize,
     inputProductDescription,
     productId, isCreate,
-    upsertProductFunction
+    upsertProductFunction,
+    inputProductWedId
   ]);
 
   // @ts-ignore
@@ -118,6 +121,25 @@ export default function Form(props:FormProps) {
                 </TableRow>
               ) : null
           }
+          <TableRow
+
+          >
+            <TableCell component="th">{ProductLabel.webProductId}</TableCell>
+            <TableCell scope="row" >
+              <TextField
+                label={ProductLabel.webProductId}
+                name="webProductId"
+                value={inputProductWedId}
+                type="number"
+                inputMode="numeric"
+                onChange={(e) => {
+                  setInputProductWebId(Number(e.target.value));
+                }}
+                fullWidth
+                required
+              />
+            </TableCell>
+          </TableRow>
           <TableRow
 
           >
